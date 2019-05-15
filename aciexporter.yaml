@@ -1,0 +1,7 @@
+apic:
+    username: admin
+    password: ciscopsdt
+    baseuri: https://sandboxapicdc.cisco.com
+
+log:
+    loglevel: debug

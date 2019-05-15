@@ -1,0 +1,1329 @@
+package main
+
+type PolUni struct {
+	Imdata []struct {
+		FvTenant struct {
+			Attributes struct {
+				ChildAction string `json:"childAction"`
+				Descr       string `json:"descr"`
+				Dn          string `json:"dn"`
+				ExtMngdBy   string `json:"extMngdBy"`
+				LcOwn       string `json:"lcOwn"`
+				ModTs       string `json:"modTs"`
+				MonPolDn    string `json:"monPolDn"`
+				Name        string `json:"name"`
+				NameAlias   string `json:"nameAlias"`
+				OwnerKey    string `json:"ownerKey"`
+				OwnerTag    string `json:"ownerTag"`
+				Status      string `json:"status"`
+				UID         string `json:"uid"`
+			} `json:"attributes"`
+			Children []struct {
+				FvAp struct {
+					Attributes struct {
+						ChildAction string `json:"childAction"`
+						Descr       string `json:"descr"`
+						ExtMngdBy   string `json:"extMngdBy"`
+						LcOwn       string `json:"lcOwn"`
+						ModTs       string `json:"modTs"`
+						MonPolDn    string `json:"monPolDn"`
+						Name        string `json:"name"`
+						NameAlias   string `json:"nameAlias"`
+						OwnerKey    string `json:"ownerKey"`
+						OwnerTag    string `json:"ownerTag"`
+						Prio        string `json:"prio"`
+						Rn          string `json:"rn"`
+						Status      string `json:"status"`
+						UID         string `json:"uid"`
+					} `json:"attributes"`
+					Children []struct {
+						FvAEPg struct {
+							Attributes struct {
+								ChildAction         string `json:"childAction"`
+								ConfigIssues        string `json:"configIssues"`
+								ConfigSt            string `json:"configSt"`
+								Descr               string `json:"descr"`
+								ExtMngdBy           string `json:"extMngdBy"`
+								FwdCtrl             string `json:"fwdCtrl"`
+								IsAttrBasedEPg      string `json:"isAttrBasedEPg"`
+								IsSharedSrvMsiteEPg string `json:"isSharedSrvMsiteEPg"`
+								LcOwn               string `json:"lcOwn"`
+								MatchT              string `json:"matchT"`
+								ModTs               string `json:"modTs"`
+								MonPolDn            string `json:"monPolDn"`
+								Name                string `json:"name"`
+								NameAlias           string `json:"nameAlias"`
+								PcEnfPref           string `json:"pcEnfPref"`
+								PcTag               string `json:"pcTag"`
+								PrefGrMemb          string `json:"prefGrMemb"`
+								Prio                string `json:"prio"`
+								Rn                  string `json:"rn"`
+								Scope               string `json:"scope"`
+								Status              string `json:"status"`
+								TriggerSt           string `json:"triggerSt"`
+								TxID                string `json:"txId"`
+								UID                 string `json:"uid"`
+							} `json:"attributes"`
+							Children []struct {
+								FvCEp struct {
+									Attributes struct {
+										ChildAction string `json:"childAction"`
+										ContName    string `json:"contName"`
+										Encap       string `json:"encap"`
+										ID          string `json:"id"`
+										Idepdn      string `json:"idepdn"`
+										IP          string `json:"ip"`
+										LcC         string `json:"lcC"`
+										LcOwn       string `json:"lcOwn"`
+										Mac         string `json:"mac"`
+										McastAddr   string `json:"mcastAddr"`
+										ModTs       string `json:"modTs"`
+										MonPolDn    string `json:"monPolDn"`
+										Name        string `json:"name"`
+										NameAlias   string `json:"nameAlias"`
+										Rn          string `json:"rn"`
+										Status      string `json:"status"`
+										UID         string `json:"uid"`
+										UUID        string `json:"uuid"`
+										VmmSrc      string `json:"vmmSrc"`
+									} `json:"attributes"`
+									Children []struct {
+										FvIP struct {
+											Attributes struct {
+												Addr        string `json:"addr"`
+												ChildAction string `json:"childAction"`
+												LcOwn       string `json:"lcOwn"`
+												ModTs       string `json:"modTs"`
+												MonPolDn    string `json:"monPolDn"`
+												Rn          string `json:"rn"`
+												Status      string `json:"status"`
+												UID         string `json:"uid"`
+											} `json:"attributes"`
+											Children []struct {
+												FvReportingNode struct {
+													Attributes struct {
+														ChildAction string `json:"childAction"`
+														ID          string `json:"id"`
+														LcC         string `json:"lcC"`
+														LcOwn       string `json:"lcOwn"`
+														ModTs       string `json:"modTs"`
+														Rn          string `json:"rn"`
+														Status      string `json:"status"`
+													} `json:"attributes"`
+												} `json:"fvReportingNode"`
+											} `json:"children"`
+										} `json:"fvIp"`
+										FvRsCEpToPathEp struct {
+											Attributes struct {
+												ChildAction  string `json:"childAction"`
+												ForceResolve string `json:"forceResolve"`
+												LcC          string `json:"lcC"`
+												LcOwn        string `json:"lcOwn"`
+												ModTs        string `json:"modTs"`
+												RType        string `json:"rType"`
+												Rn           string `json:"rn"`
+												State        string `json:"state"`
+												StateQual    string `json:"stateQual"`
+												Status       string `json:"status"`
+												TCl          string `json:"tCl"`
+												TDn          string `json:"tDn"`
+												TType        string `json:"tType"`
+											} `json:"attributes"`
+										} `json:"fvRsCEpToPathEp"`
+									} `json:"children"`
+								} `json:"fvCEp"`
+								FvCtrctCtxDefCont struct {
+									Attributes struct {
+										ChildAction string `json:"childAction"`
+										CtxDn       string `json:"ctxDn"`
+										CtxdefDn    string `json:"ctxdefDn"`
+										LcOwn       string `json:"lcOwn"`
+										ModTs       string `json:"modTs"`
+										MonPolDn    string `json:"monPolDn"`
+										Name        string `json:"name"`
+										NameAlias   string `json:"nameAlias"`
+										Rn          string `json:"rn"`
+										Status      string `json:"status"`
+									} `json:"attributes"`
+								} `json:"fvCtrctCtxDefCont"`
+								FvRsBd struct {
+									Attributes struct {
+										ChildAction  string `json:"childAction"`
+										ExtMngdBy    string `json:"extMngdBy"`
+										ForceResolve string `json:"forceResolve"`
+										LcOwn        string `json:"lcOwn"`
+										ModTs        string `json:"modTs"`
+										MonPolDn     string `json:"monPolDn"`
+										RType        string `json:"rType"`
+										Rn           string `json:"rn"`
+										State        string `json:"state"`
+										StateQual    string `json:"stateQual"`
+										Status       string `json:"status"`
+										TCl          string `json:"tCl"`
+										TContextDn   string `json:"tContextDn"`
+										TDn          string `json:"tDn"`
+										TRn          string `json:"tRn"`
+										TType        string `json:"tType"`
+										TnFvBDName   string `json:"tnFvBDName"`
+										UID          string `json:"uid"`
+									} `json:"attributes"`
+									Children []struct {
+										FvSubnetBDDefCont struct {
+											Attributes struct {
+												BddefDn     string `json:"bddefDn"`
+												ChildAction string `json:"childAction"`
+												LcOwn       string `json:"lcOwn"`
+												ModTs       string `json:"modTs"`
+												MonPolDn    string `json:"monPolDn"`
+												Name        string `json:"name"`
+												NameAlias   string `json:"nameAlias"`
+												Rn          string `json:"rn"`
+												Status      string `json:"status"`
+											} `json:"attributes"`
+										} `json:"fvSubnetBDDefCont"`
+									} `json:"children"`
+								} `json:"fvRsBd"`
+								FvRsCons struct {
+									Attributes struct {
+										ChildAction      string `json:"childAction"`
+										CtrctUpd         string `json:"ctrctUpd"`
+										DeplInfo         string `json:"deplInfo"`
+										ExtMngdBy        string `json:"extMngdBy"`
+										ForceResolve     string `json:"forceResolve"`
+										LcOwn            string `json:"lcOwn"`
+										ModTs            string `json:"modTs"`
+										MonPolDn         string `json:"monPolDn"`
+										Prio             string `json:"prio"`
+										RType            string `json:"rType"`
+										Rn               string `json:"rn"`
+										State            string `json:"state"`
+										StateQual        string `json:"stateQual"`
+										Status           string `json:"status"`
+										TCl              string `json:"tCl"`
+										TContextDn       string `json:"tContextDn"`
+										TDn              string `json:"tDn"`
+										TRn              string `json:"tRn"`
+										TType            string `json:"tType"`
+										TnVzBrCPName     string `json:"tnVzBrCPName"`
+										TriggerSt        string `json:"triggerSt"`
+										UID              string `json:"uid"`
+										UpdateCollection string `json:"updateCollection"`
+									} `json:"attributes"`
+									Children []struct {
+										FvCollectionCont struct {
+											Attributes struct {
+												ChildAction  string `json:"childAction"`
+												CollectionDn string `json:"collectionDn"`
+												LcOwn        string `json:"lcOwn"`
+												ModTs        string `json:"modTs"`
+												MonPolDn     string `json:"monPolDn"`
+												Name         string `json:"name"`
+												NameAlias    string `json:"nameAlias"`
+												Rn           string `json:"rn"`
+												Status       string `json:"status"`
+											} `json:"attributes"`
+										} `json:"fvCollectionCont"`
+									} `json:"children"`
+								} `json:"fvRsCons"`
+								FvRsCustQosPol struct {
+									Attributes struct {
+										ChildAction        string `json:"childAction"`
+										ForceResolve       string `json:"forceResolve"`
+										LcOwn              string `json:"lcOwn"`
+										ModTs              string `json:"modTs"`
+										MonPolDn           string `json:"monPolDn"`
+										RType              string `json:"rType"`
+										Rn                 string `json:"rn"`
+										State              string `json:"state"`
+										StateQual          string `json:"stateQual"`
+										Status             string `json:"status"`
+										TCl                string `json:"tCl"`
+										TContextDn         string `json:"tContextDn"`
+										TDn                string `json:"tDn"`
+										TRn                string `json:"tRn"`
+										TType              string `json:"tType"`
+										TnQosCustomPolName string `json:"tnQosCustomPolName"`
+										UID                string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"fvRsCustQosPol"`
+								FvRsDomAtt struct {
+									Attributes struct {
+										ChildAction  string `json:"childAction"`
+										ClassPref    string `json:"classPref"`
+										ConfigIssues string `json:"configIssues"`
+										Delimiter    string `json:"delimiter"`
+										Encap        string `json:"encap"`
+										EncapMode    string `json:"encapMode"`
+										EpgCos       string `json:"epgCos"`
+										EpgCosPref   string `json:"epgCosPref"`
+										ExtMngdBy    string `json:"extMngdBy"`
+										ForceResolve string `json:"forceResolve"`
+										InstrImedcy  string `json:"instrImedcy"`
+										LcOwn        string `json:"lcOwn"`
+										ModTs        string `json:"modTs"`
+										Mode         string `json:"mode"`
+										MonPolDn     string `json:"monPolDn"`
+										NetflowDir   string `json:"netflowDir"`
+										NetflowPref  string `json:"netflowPref"`
+										PrimaryEncap string `json:"primaryEncap"`
+										RType        string `json:"rType"`
+										ResImedcy    string `json:"resImedcy"`
+										Rn           string `json:"rn"`
+										State        string `json:"state"`
+										StateQual    string `json:"stateQual"`
+										Status       string `json:"status"`
+										TCl          string `json:"tCl"`
+										TDn          string `json:"tDn"`
+										TType        string `json:"tType"`
+										TriggerSt    string `json:"triggerSt"`
+										TxID         string `json:"txId"`
+										UID          string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"fvRsDomAtt"`
+								FvRsGraphDef struct {
+									Attributes struct {
+										ChildAction  string `json:"childAction"`
+										ForceResolve string `json:"forceResolve"`
+										LcOwn        string `json:"lcOwn"`
+										ModTs        string `json:"modTs"`
+										RType        string `json:"rType"`
+										Rn           string `json:"rn"`
+										State        string `json:"state"`
+										StateQual    string `json:"stateQual"`
+										Status       string `json:"status"`
+										TCl          string `json:"tCl"`
+										TDn          string `json:"tDn"`
+										TType        string `json:"tType"`
+									} `json:"attributes"`
+								} `json:"fvRsGraphDef"`
+								FvRsPathAtt struct {
+									Attributes struct {
+										ChildAction  string `json:"childAction"`
+										Descr        string `json:"descr"`
+										Encap        string `json:"encap"`
+										ExtMngdBy    string `json:"extMngdBy"`
+										ForceResolve string `json:"forceResolve"`
+										InstrImedcy  string `json:"instrImedcy"`
+										LcC          string `json:"lcC"`
+										LcOwn        string `json:"lcOwn"`
+										ModTs        string `json:"modTs"`
+										Mode         string `json:"mode"`
+										MonPolDn     string `json:"monPolDn"`
+										PrimaryEncap string `json:"primaryEncap"`
+										RType        string `json:"rType"`
+										Rn           string `json:"rn"`
+										State        string `json:"state"`
+										StateQual    string `json:"stateQual"`
+										Status       string `json:"status"`
+										TCl          string `json:"tCl"`
+										TDn          string `json:"tDn"`
+										TType        string `json:"tType"`
+										UID          string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"fvRsPathAtt"`
+								FvRsProv struct {
+									Attributes struct {
+										ChildAction      string `json:"childAction"`
+										CtrctUpd         string `json:"ctrctUpd"`
+										ExtMngdBy        string `json:"extMngdBy"`
+										ForceResolve     string `json:"forceResolve"`
+										LcOwn            string `json:"lcOwn"`
+										MatchT           string `json:"matchT"`
+										ModTs            string `json:"modTs"`
+										MonPolDn         string `json:"monPolDn"`
+										Prio             string `json:"prio"`
+										RType            string `json:"rType"`
+										Rn               string `json:"rn"`
+										State            string `json:"state"`
+										StateQual        string `json:"stateQual"`
+										Status           string `json:"status"`
+										TCl              string `json:"tCl"`
+										TContextDn       string `json:"tContextDn"`
+										TDn              string `json:"tDn"`
+										TRn              string `json:"tRn"`
+										TType            string `json:"tType"`
+										TnVzBrCPName     string `json:"tnVzBrCPName"`
+										TriggerSt        string `json:"triggerSt"`
+										UID              string `json:"uid"`
+										UpdateCollection string `json:"updateCollection"`
+									} `json:"attributes"`
+									Children []struct {
+										FvCollectionCont struct {
+											Attributes struct {
+												ChildAction  string `json:"childAction"`
+												CollectionDn string `json:"collectionDn"`
+												LcOwn        string `json:"lcOwn"`
+												ModTs        string `json:"modTs"`
+												MonPolDn     string `json:"monPolDn"`
+												Name         string `json:"name"`
+												NameAlias    string `json:"nameAlias"`
+												Rn           string `json:"rn"`
+												Status       string `json:"status"`
+											} `json:"attributes"`
+										} `json:"fvCollectionCont"`
+									} `json:"children"`
+								} `json:"fvRsProv"`
+							} `json:"children"`
+						} `json:"fvAEPg"`
+					} `json:"children"`
+				} `json:"fvAp"`
+				FvBD struct {
+					Attributes struct {
+						OptimizeWanBandwidth     string `json:"OptimizeWanBandwidth"`
+						ArpFlood                 string `json:"arpFlood"`
+						BcastP                   string `json:"bcastP"`
+						ChildAction              string `json:"childAction"`
+						ConfigIssues             string `json:"configIssues"`
+						Descr                    string `json:"descr"`
+						EpClear                  string `json:"epClear"`
+						EpMoveDetectMode         string `json:"epMoveDetectMode"`
+						ExtMngdBy                string `json:"extMngdBy"`
+						IntersiteBumTrafficAllow string `json:"intersiteBumTrafficAllow"`
+						IntersiteL2Stretch       string `json:"intersiteL2Stretch"`
+						IPLearning               string `json:"ipLearning"`
+						LcOwn                    string `json:"lcOwn"`
+						LimitIPLearnToSubnets    string `json:"limitIpLearnToSubnets"`
+						LlAddr                   string `json:"llAddr"`
+						Mac                      string `json:"mac"`
+						McastAllow               string `json:"mcastAllow"`
+						ModTs                    string `json:"modTs"`
+						MonPolDn                 string `json:"monPolDn"`
+						Mtu                      string `json:"mtu"`
+						MultiDstPktAct           string `json:"multiDstPktAct"`
+						Name                     string `json:"name"`
+						NameAlias                string `json:"nameAlias"`
+						OwnerKey                 string `json:"ownerKey"`
+						OwnerTag                 string `json:"ownerTag"`
+						PcTag                    string `json:"pcTag"`
+						Rn                       string `json:"rn"`
+						Scope                    string `json:"scope"`
+						Seg                      string `json:"seg"`
+						Status                   string `json:"status"`
+						Type                     string `json:"type"`
+						UID                      string `json:"uid"`
+						UnicastRoute             string `json:"unicastRoute"`
+						UnkMacUcastAct           string `json:"unkMacUcastAct"`
+						UnkMcastAct              string `json:"unkMcastAct"`
+						Vmac                     string `json:"vmac"`
+					} `json:"attributes"`
+					Children []struct {
+						FvRsBDToNdP struct {
+							Attributes struct {
+								ChildAction   string `json:"childAction"`
+								ForceResolve  string `json:"forceResolve"`
+								LcOwn         string `json:"lcOwn"`
+								ModTs         string `json:"modTs"`
+								MonPolDn      string `json:"monPolDn"`
+								RType         string `json:"rType"`
+								Rn            string `json:"rn"`
+								State         string `json:"state"`
+								StateQual     string `json:"stateQual"`
+								Status        string `json:"status"`
+								TCl           string `json:"tCl"`
+								TContextDn    string `json:"tContextDn"`
+								TDn           string `json:"tDn"`
+								TRn           string `json:"tRn"`
+								TType         string `json:"tType"`
+								TnNdIfPolName string `json:"tnNdIfPolName"`
+								UID           string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsBDToNdP"`
+						FvRsBdToEpRet struct {
+							Attributes struct {
+								ChildAction      string `json:"childAction"`
+								ForceResolve     string `json:"forceResolve"`
+								LcOwn            string `json:"lcOwn"`
+								ModTs            string `json:"modTs"`
+								MonPolDn         string `json:"monPolDn"`
+								RType            string `json:"rType"`
+								ResolveAct       string `json:"resolveAct"`
+								Rn               string `json:"rn"`
+								State            string `json:"state"`
+								StateQual        string `json:"stateQual"`
+								Status           string `json:"status"`
+								TCl              string `json:"tCl"`
+								TContextDn       string `json:"tContextDn"`
+								TDn              string `json:"tDn"`
+								TRn              string `json:"tRn"`
+								TType            string `json:"tType"`
+								TnFvEpRetPolName string `json:"tnFvEpRetPolName"`
+								UID              string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsBdToEpRet"`
+						FvRsCtx struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								ForceResolve string `json:"forceResolve"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								RType        string `json:"rType"`
+								Rn           string `json:"rn"`
+								State        string `json:"state"`
+								StateQual    string `json:"stateQual"`
+								Status       string `json:"status"`
+								TCl          string `json:"tCl"`
+								TContextDn   string `json:"tContextDn"`
+								TDn          string `json:"tDn"`
+								TRn          string `json:"tRn"`
+								TType        string `json:"tType"`
+								TnFvCtxName  string `json:"tnFvCtxName"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsCtx"`
+						FvRsIgmpsn struct {
+							Attributes struct {
+								ChildAction        string `json:"childAction"`
+								ForceResolve       string `json:"forceResolve"`
+								LcOwn              string `json:"lcOwn"`
+								ModTs              string `json:"modTs"`
+								MonPolDn           string `json:"monPolDn"`
+								RType              string `json:"rType"`
+								Rn                 string `json:"rn"`
+								State              string `json:"state"`
+								StateQual          string `json:"stateQual"`
+								Status             string `json:"status"`
+								TCl                string `json:"tCl"`
+								TContextDn         string `json:"tContextDn"`
+								TDn                string `json:"tDn"`
+								TRn                string `json:"tRn"`
+								TType              string `json:"tType"`
+								TnIgmpSnoopPolName string `json:"tnIgmpSnoopPolName"`
+								UID                string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsIgmpsn"`
+						FvRtBd struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								TCl         string `json:"tCl"`
+								TDn         string `json:"tDn"`
+							} `json:"attributes"`
+						} `json:"fvRtBd"`
+						FvSubnet struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								Ctrl        string `json:"ctrl"`
+								Descr       string `json:"descr"`
+								ExtMngdBy   string `json:"extMngdBy"`
+								IP          string `json:"ip"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								MonPolDn    string `json:"monPolDn"`
+								Name        string `json:"name"`
+								NameAlias   string `json:"nameAlias"`
+								Preferred   string `json:"preferred"`
+								Rn          string `json:"rn"`
+								Scope       string `json:"scope"`
+								Status      string `json:"status"`
+								UID         string `json:"uid"`
+								Virtual     string `json:"virtual"`
+							} `json:"attributes"`
+						} `json:"fvSubnet"`
+					} `json:"children"`
+				} `json:"fvBD"`
+				FvCtx struct {
+					Attributes struct {
+						BdEnforcedEnable string `json:"bdEnforcedEnable"`
+						ChildAction      string `json:"childAction"`
+						Descr            string `json:"descr"`
+						ExtMngdBy        string `json:"extMngdBy"`
+						KnwMcastAct      string `json:"knwMcastAct"`
+						LcOwn            string `json:"lcOwn"`
+						ModTs            string `json:"modTs"`
+						MonPolDn         string `json:"monPolDn"`
+						Name             string `json:"name"`
+						NameAlias        string `json:"nameAlias"`
+						OwnerKey         string `json:"ownerKey"`
+						OwnerTag         string `json:"ownerTag"`
+						PcEnfDir         string `json:"pcEnfDir"`
+						PcEnfDirUpdated  string `json:"pcEnfDirUpdated"`
+						PcEnfPref        string `json:"pcEnfPref"`
+						PcTag            string `json:"pcTag"`
+						Rn               string `json:"rn"`
+						Scope            string `json:"scope"`
+						Seg              string `json:"seg"`
+						Status           string `json:"status"`
+						UID              string `json:"uid"`
+					} `json:"attributes"`
+					Children []struct {
+						FvRsBgpCtxPol struct {
+							Attributes struct {
+								ChildAction     string `json:"childAction"`
+								ExtMngdBy       string `json:"extMngdBy"`
+								ForceResolve    string `json:"forceResolve"`
+								LcOwn           string `json:"lcOwn"`
+								ModTs           string `json:"modTs"`
+								MonPolDn        string `json:"monPolDn"`
+								RType           string `json:"rType"`
+								Rn              string `json:"rn"`
+								State           string `json:"state"`
+								StateQual       string `json:"stateQual"`
+								Status          string `json:"status"`
+								TCl             string `json:"tCl"`
+								TContextDn      string `json:"tContextDn"`
+								TDn             string `json:"tDn"`
+								TRn             string `json:"tRn"`
+								TType           string `json:"tType"`
+								TnBgpCtxPolName string `json:"tnBgpCtxPolName"`
+								UID             string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsBgpCtxPol"`
+						FvRsCtxToEpRet struct {
+							Attributes struct {
+								ChildAction      string `json:"childAction"`
+								ForceResolve     string `json:"forceResolve"`
+								LcOwn            string `json:"lcOwn"`
+								ModTs            string `json:"modTs"`
+								MonPolDn         string `json:"monPolDn"`
+								RType            string `json:"rType"`
+								Rn               string `json:"rn"`
+								State            string `json:"state"`
+								StateQual        string `json:"stateQual"`
+								Status           string `json:"status"`
+								TCl              string `json:"tCl"`
+								TContextDn       string `json:"tContextDn"`
+								TDn              string `json:"tDn"`
+								TRn              string `json:"tRn"`
+								TType            string `json:"tType"`
+								TnFvEpRetPolName string `json:"tnFvEpRetPolName"`
+								UID              string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsCtxToEpRet"`
+						FvRsCtxToExtRouteTagPol struct {
+							Attributes struct {
+								ChildAction            string `json:"childAction"`
+								ForceResolve           string `json:"forceResolve"`
+								LcOwn                  string `json:"lcOwn"`
+								ModTs                  string `json:"modTs"`
+								MonPolDn               string `json:"monPolDn"`
+								RType                  string `json:"rType"`
+								Rn                     string `json:"rn"`
+								State                  string `json:"state"`
+								StateQual              string `json:"stateQual"`
+								Status                 string `json:"status"`
+								TCl                    string `json:"tCl"`
+								TContextDn             string `json:"tContextDn"`
+								TDn                    string `json:"tDn"`
+								TRn                    string `json:"tRn"`
+								TType                  string `json:"tType"`
+								TnL3extRouteTagPolName string `json:"tnL3extRouteTagPolName"`
+								UID                    string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsCtxToExtRouteTagPol"`
+						FvRsOspfCtxPol struct {
+							Attributes struct {
+								ChildAction      string `json:"childAction"`
+								ForceResolve     string `json:"forceResolve"`
+								LcOwn            string `json:"lcOwn"`
+								ModTs            string `json:"modTs"`
+								MonPolDn         string `json:"monPolDn"`
+								RType            string `json:"rType"`
+								Rn               string `json:"rn"`
+								State            string `json:"state"`
+								StateQual        string `json:"stateQual"`
+								Status           string `json:"status"`
+								TCl              string `json:"tCl"`
+								TContextDn       string `json:"tContextDn"`
+								TDn              string `json:"tDn"`
+								TRn              string `json:"tRn"`
+								TType            string `json:"tType"`
+								TnOspfCtxPolName string `json:"tnOspfCtxPolName"`
+								UID              string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"fvRsOspfCtxPol"`
+						FvRtCtx struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								TCl         string `json:"tCl"`
+								TDn         string `json:"tDn"`
+							} `json:"attributes"`
+						} `json:"fvRtCtx"`
+						FvRtEctx struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								TCl         string `json:"tCl"`
+								TDn         string `json:"tDn"`
+							} `json:"attributes"`
+						} `json:"fvRtEctx"`
+						VzAny struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								ConfigSt    string `json:"configSt"`
+								Descr       string `json:"descr"`
+								LcOwn       string `json:"lcOwn"`
+								MatchT      string `json:"matchT"`
+								ModTs       string `json:"modTs"`
+								MonPolDn    string `json:"monPolDn"`
+								Name        string `json:"name"`
+								NameAlias   string `json:"nameAlias"`
+								PcTag       string `json:"pcTag"`
+								PrefGrMemb  string `json:"prefGrMemb"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								UID         string `json:"uid"`
+								UseAnyDef   string `json:"useAnyDef"`
+							} `json:"attributes"`
+						} `json:"vzAny"`
+					} `json:"children"`
+				} `json:"fvCtx"`
+				FvRsTenantMonPol struct {
+					Attributes struct {
+						ChildAction     string `json:"childAction"`
+						ForceResolve    string `json:"forceResolve"`
+						LcOwn           string `json:"lcOwn"`
+						ModTs           string `json:"modTs"`
+						MonPolDn        string `json:"monPolDn"`
+						RType           string `json:"rType"`
+						Rn              string `json:"rn"`
+						State           string `json:"state"`
+						StateQual       string `json:"stateQual"`
+						Status          string `json:"status"`
+						TCl             string `json:"tCl"`
+						TContextDn      string `json:"tContextDn"`
+						TDn             string `json:"tDn"`
+						TRn             string `json:"tRn"`
+						TType           string `json:"tType"`
+						TnMonEPGPolName string `json:"tnMonEPGPolName"`
+						UID             string `json:"uid"`
+					} `json:"attributes"`
+				} `json:"fvRsTenantMonPol"`
+				L3extOut struct {
+					Attributes struct {
+						ChildAction   string `json:"childAction"`
+						Descr         string `json:"descr"`
+						EnforceRtctrl string `json:"enforceRtctrl"`
+						ExtMngdBy     string `json:"extMngdBy"`
+						LcOwn         string `json:"lcOwn"`
+						ModTs         string `json:"modTs"`
+						MonPolDn      string `json:"monPolDn"`
+						Name          string `json:"name"`
+						NameAlias     string `json:"nameAlias"`
+						OwnerKey      string `json:"ownerKey"`
+						OwnerTag      string `json:"ownerTag"`
+						Rn            string `json:"rn"`
+						Status        string `json:"status"`
+						TargetDscp    string `json:"targetDscp"`
+						UID           string `json:"uid"`
+					} `json:"attributes"`
+					Children []struct {
+						L3extInstP struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ConfigIssues string `json:"configIssues"`
+								ConfigSt     string `json:"configSt"`
+								Descr        string `json:"descr"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								LcOwn        string `json:"lcOwn"`
+								MatchT       string `json:"matchT"`
+								Mcast        string `json:"mcast"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								Name         string `json:"name"`
+								NameAlias    string `json:"nameAlias"`
+								PcTag        string `json:"pcTag"`
+								PrefGrMemb   string `json:"prefGrMemb"`
+								Prio         string `json:"prio"`
+								Rn           string `json:"rn"`
+								Scope        string `json:"scope"`
+								Status       string `json:"status"`
+								TargetDscp   string `json:"targetDscp"`
+								TriggerSt    string `json:"triggerSt"`
+								TxID         string `json:"txId"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+							Children []struct {
+								FvRsCons struct {
+									Attributes struct {
+										ChildAction      string `json:"childAction"`
+										CtrctUpd         string `json:"ctrctUpd"`
+										DeplInfo         string `json:"deplInfo"`
+										ExtMngdBy        string `json:"extMngdBy"`
+										ForceResolve     string `json:"forceResolve"`
+										LcOwn            string `json:"lcOwn"`
+										ModTs            string `json:"modTs"`
+										MonPolDn         string `json:"monPolDn"`
+										Prio             string `json:"prio"`
+										RType            string `json:"rType"`
+										Rn               string `json:"rn"`
+										State            string `json:"state"`
+										StateQual        string `json:"stateQual"`
+										Status           string `json:"status"`
+										TCl              string `json:"tCl"`
+										TContextDn       string `json:"tContextDn"`
+										TDn              string `json:"tDn"`
+										TRn              string `json:"tRn"`
+										TType            string `json:"tType"`
+										TnVzBrCPName     string `json:"tnVzBrCPName"`
+										TriggerSt        string `json:"triggerSt"`
+										UID              string `json:"uid"`
+										UpdateCollection string `json:"updateCollection"`
+									} `json:"attributes"`
+									Children []struct {
+										FvCollectionCont struct {
+											Attributes struct {
+												ChildAction  string `json:"childAction"`
+												CollectionDn string `json:"collectionDn"`
+												LcOwn        string `json:"lcOwn"`
+												ModTs        string `json:"modTs"`
+												MonPolDn     string `json:"monPolDn"`
+												Name         string `json:"name"`
+												NameAlias    string `json:"nameAlias"`
+												Rn           string `json:"rn"`
+												Status       string `json:"status"`
+											} `json:"attributes"`
+										} `json:"fvCollectionCont"`
+									} `json:"children"`
+								} `json:"fvRsCons"`
+								FvRsCustQosPol struct {
+									Attributes struct {
+										ChildAction        string `json:"childAction"`
+										ForceResolve       string `json:"forceResolve"`
+										LcOwn              string `json:"lcOwn"`
+										ModTs              string `json:"modTs"`
+										MonPolDn           string `json:"monPolDn"`
+										RType              string `json:"rType"`
+										Rn                 string `json:"rn"`
+										State              string `json:"state"`
+										StateQual          string `json:"stateQual"`
+										Status             string `json:"status"`
+										TCl                string `json:"tCl"`
+										TContextDn         string `json:"tContextDn"`
+										TDn                string `json:"tDn"`
+										TRn                string `json:"tRn"`
+										TType              string `json:"tType"`
+										TnQosCustomPolName string `json:"tnQosCustomPolName"`
+										UID                string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"fvRsCustQosPol"`
+								L3extConfigOutDef struct {
+									Attributes struct {
+										ChildAction string `json:"childAction"`
+										LcOwn       string `json:"lcOwn"`
+										ModTs       string `json:"modTs"`
+										Rn          string `json:"rn"`
+										Status      string `json:"status"`
+									} `json:"attributes"`
+								} `json:"l3extConfigOutDef"`
+								L3extSubnet struct {
+									Attributes struct {
+										Aggregate   string `json:"aggregate"`
+										ChildAction string `json:"childAction"`
+										Descr       string `json:"descr"`
+										ExtMngdBy   string `json:"extMngdBy"`
+										IP          string `json:"ip"`
+										LcOwn       string `json:"lcOwn"`
+										ModTs       string `json:"modTs"`
+										MonPolDn    string `json:"monPolDn"`
+										Name        string `json:"name"`
+										NameAlias   string `json:"nameAlias"`
+										Rn          string `json:"rn"`
+										Scope       string `json:"scope"`
+										Status      string `json:"status"`
+										UID         string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"l3extSubnet"`
+							} `json:"children"`
+						} `json:"l3extInstP"`
+						L3extLNodeP struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ConfigIssues string `json:"configIssues"`
+								Descr        string `json:"descr"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								Name         string `json:"name"`
+								NameAlias    string `json:"nameAlias"`
+								OwnerKey     string `json:"ownerKey"`
+								OwnerTag     string `json:"ownerTag"`
+								Rn           string `json:"rn"`
+								Status       string `json:"status"`
+								Tag          string `json:"tag"`
+								TargetDscp   string `json:"targetDscp"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+							Children []struct {
+								L3extLIfP struct {
+									Attributes struct {
+										Addr        string `json:"addr"`
+										ChildAction string `json:"childAction"`
+										Descr       string `json:"descr"`
+										Encap       string `json:"encap"`
+										ExtMngdBy   string `json:"extMngdBy"`
+										LcOwn       string `json:"lcOwn"`
+										ModTs       string `json:"modTs"`
+										MonPolDn    string `json:"monPolDn"`
+										Name        string `json:"name"`
+										NameAlias   string `json:"nameAlias"`
+										OwnerKey    string `json:"ownerKey"`
+										OwnerTag    string `json:"ownerTag"`
+										Rn          string `json:"rn"`
+										Status      string `json:"status"`
+										Tag         string `json:"tag"`
+										TargetDscp  string `json:"targetDscp"`
+										UID         string `json:"uid"`
+									} `json:"attributes"`
+									Children []struct {
+										L3extRsEgressQosDppPol struct {
+											Attributes struct {
+												ChildAction     string `json:"childAction"`
+												ForceResolve    string `json:"forceResolve"`
+												LcOwn           string `json:"lcOwn"`
+												ModTs           string `json:"modTs"`
+												MonPolDn        string `json:"monPolDn"`
+												RType           string `json:"rType"`
+												Rn              string `json:"rn"`
+												State           string `json:"state"`
+												StateQual       string `json:"stateQual"`
+												Status          string `json:"status"`
+												TCl             string `json:"tCl"`
+												TContextDn      string `json:"tContextDn"`
+												TDn             string `json:"tDn"`
+												TRn             string `json:"tRn"`
+												TType           string `json:"tType"`
+												TnQosDppPolName string `json:"tnQosDppPolName"`
+												UID             string `json:"uid"`
+											} `json:"attributes"`
+										} `json:"l3extRsEgressQosDppPol"`
+										L3extRsIngressQosDppPol struct {
+											Attributes struct {
+												ChildAction     string `json:"childAction"`
+												ForceResolve    string `json:"forceResolve"`
+												LcOwn           string `json:"lcOwn"`
+												ModTs           string `json:"modTs"`
+												MonPolDn        string `json:"monPolDn"`
+												RType           string `json:"rType"`
+												Rn              string `json:"rn"`
+												State           string `json:"state"`
+												StateQual       string `json:"stateQual"`
+												Status          string `json:"status"`
+												TCl             string `json:"tCl"`
+												TContextDn      string `json:"tContextDn"`
+												TDn             string `json:"tDn"`
+												TRn             string `json:"tRn"`
+												TType           string `json:"tType"`
+												TnQosDppPolName string `json:"tnQosDppPolName"`
+												UID             string `json:"uid"`
+											} `json:"attributes"`
+										} `json:"l3extRsIngressQosDppPol"`
+										L3extRsNdIfPol struct {
+											Attributes struct {
+												ChildAction   string `json:"childAction"`
+												ExtMngdBy     string `json:"extMngdBy"`
+												ForceResolve  string `json:"forceResolve"`
+												LcOwn         string `json:"lcOwn"`
+												ModTs         string `json:"modTs"`
+												MonPolDn      string `json:"monPolDn"`
+												RType         string `json:"rType"`
+												Rn            string `json:"rn"`
+												State         string `json:"state"`
+												StateQual     string `json:"stateQual"`
+												Status        string `json:"status"`
+												TCl           string `json:"tCl"`
+												TContextDn    string `json:"tContextDn"`
+												TDn           string `json:"tDn"`
+												TRn           string `json:"tRn"`
+												TType         string `json:"tType"`
+												TnNdIfPolName string `json:"tnNdIfPolName"`
+												UID           string `json:"uid"`
+											} `json:"attributes"`
+										} `json:"l3extRsNdIfPol"`
+										L3extRsPathL3OutAtt struct {
+											Attributes struct {
+												Addr         string `json:"addr"`
+												ChildAction  string `json:"childAction"`
+												Descr        string `json:"descr"`
+												Encap        string `json:"encap"`
+												EncapScope   string `json:"encapScope"`
+												ExtMngdBy    string `json:"extMngdBy"`
+												ForceResolve string `json:"forceResolve"`
+												IfInstT      string `json:"ifInstT"`
+												LcOwn        string `json:"lcOwn"`
+												LlAddr       string `json:"llAddr"`
+												Mac          string `json:"mac"`
+												ModTs        string `json:"modTs"`
+												Mode         string `json:"mode"`
+												MonPolDn     string `json:"monPolDn"`
+												Mtu          string `json:"mtu"`
+												RType        string `json:"rType"`
+												Rn           string `json:"rn"`
+												State        string `json:"state"`
+												StateQual    string `json:"stateQual"`
+												Status       string `json:"status"`
+												TCl          string `json:"tCl"`
+												TDn          string `json:"tDn"`
+												TType        string `json:"tType"`
+												TargetDscp   string `json:"targetDscp"`
+												UID          string `json:"uid"`
+											} `json:"attributes"`
+										} `json:"l3extRsPathL3OutAtt"`
+									} `json:"children"`
+								} `json:"l3extLIfP"`
+								L3extRsNodeL3OutAtt struct {
+									Attributes struct {
+										ChildAction   string `json:"childAction"`
+										ExtMngdBy     string `json:"extMngdBy"`
+										ForceResolve  string `json:"forceResolve"`
+										LcOwn         string `json:"lcOwn"`
+										ModTs         string `json:"modTs"`
+										MonPolDn      string `json:"monPolDn"`
+										RType         string `json:"rType"`
+										Rn            string `json:"rn"`
+										RtrID         string `json:"rtrId"`
+										RtrIDLoopBack string `json:"rtrIdLoopBack"`
+										State         string `json:"state"`
+										StateQual     string `json:"stateQual"`
+										Status        string `json:"status"`
+										TCl           string `json:"tCl"`
+										TDn           string `json:"tDn"`
+										TType         string `json:"tType"`
+										UID           string `json:"uid"`
+									} `json:"attributes"`
+									Children []struct {
+										IPRouteP struct {
+											Attributes struct {
+												Aggregate   string `json:"aggregate"`
+												ChildAction string `json:"childAction"`
+												Descr       string `json:"descr"`
+												ExtMngdBy   string `json:"extMngdBy"`
+												IP          string `json:"ip"`
+												LcOwn       string `json:"lcOwn"`
+												ModTs       string `json:"modTs"`
+												MonPolDn    string `json:"monPolDn"`
+												Name        string `json:"name"`
+												NameAlias   string `json:"nameAlias"`
+												Pref        string `json:"pref"`
+												Rn          string `json:"rn"`
+												RtCtrl      string `json:"rtCtrl"`
+												Status      string `json:"status"`
+												Type        string `json:"type"`
+												UID         string `json:"uid"`
+											} `json:"attributes"`
+											Children []struct {
+												IPNexthopP struct {
+													Attributes struct {
+														ChildAction string `json:"childAction"`
+														Descr       string `json:"descr"`
+														ExtMngdBy   string `json:"extMngdBy"`
+														LcOwn       string `json:"lcOwn"`
+														ModTs       string `json:"modTs"`
+														MonPolDn    string `json:"monPolDn"`
+														Name        string `json:"name"`
+														NameAlias   string `json:"nameAlias"`
+														NhAddr      string `json:"nhAddr"`
+														Pref        string `json:"pref"`
+														Rn          string `json:"rn"`
+														Status      string `json:"status"`
+														Type        string `json:"type"`
+														UID         string `json:"uid"`
+													} `json:"attributes"`
+												} `json:"ipNexthopP"`
+											} `json:"children"`
+										} `json:"ipRouteP"`
+									} `json:"children"`
+								} `json:"l3extRsNodeL3OutAtt"`
+							} `json:"children"`
+						} `json:"l3extLNodeP"`
+						L3extRsEctx struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								ForceResolve string `json:"forceResolve"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								RType        string `json:"rType"`
+								Rn           string `json:"rn"`
+								State        string `json:"state"`
+								StateQual    string `json:"stateQual"`
+								Status       string `json:"status"`
+								TCl          string `json:"tCl"`
+								TContextDn   string `json:"tContextDn"`
+								TDn          string `json:"tDn"`
+								TRn          string `json:"tRn"`
+								TType        string `json:"tType"`
+								TnFvCtxName  string `json:"tnFvCtxName"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"l3extRsEctx"`
+						L3extRsL3DomAtt struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								ForceResolve string `json:"forceResolve"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								RType        string `json:"rType"`
+								Rn           string `json:"rn"`
+								State        string `json:"state"`
+								StateQual    string `json:"stateQual"`
+								Status       string `json:"status"`
+								TCl          string `json:"tCl"`
+								TDn          string `json:"tDn"`
+								TType        string `json:"tType"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"l3extRsL3DomAtt"`
+					} `json:"children"`
+				} `json:"l3extOut"`
+				VnsSvcCont struct {
+					Attributes struct {
+						ChildAction string `json:"childAction"`
+						ExtMngdBy   string `json:"extMngdBy"`
+						LcOwn       string `json:"lcOwn"`
+						ModTs       string `json:"modTs"`
+						MonPolDn    string `json:"monPolDn"`
+						Rn          string `json:"rn"`
+						Status      string `json:"status"`
+						UID         string `json:"uid"`
+					} `json:"attributes"`
+				} `json:"vnsSvcCont"`
+				VzBrCP struct {
+					Attributes struct {
+						ChildAction   string `json:"childAction"`
+						ConfigIssues  string `json:"configIssues"`
+						Descr         string `json:"descr"`
+						ExtMngdBy     string `json:"extMngdBy"`
+						LcOwn         string `json:"lcOwn"`
+						ModTs         string `json:"modTs"`
+						MonPolDn      string `json:"monPolDn"`
+						Name          string `json:"name"`
+						NameAlias     string `json:"nameAlias"`
+						OwnerKey      string `json:"ownerKey"`
+						OwnerTag      string `json:"ownerTag"`
+						Prio          string `json:"prio"`
+						ReevaluateAll string `json:"reevaluateAll"`
+						Rn            string `json:"rn"`
+						Scope         string `json:"scope"`
+						Status        string `json:"status"`
+						TargetDscp    string `json:"targetDscp"`
+						UID           string `json:"uid"`
+					} `json:"attributes"`
+					Children []struct {
+						VzDirAssDef struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								Descr       string `json:"descr"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								MonPolDn    string `json:"monPolDn"`
+								Name        string `json:"name"`
+								NameAlias   string `json:"nameAlias"`
+								OwnerKey    string `json:"ownerKey"`
+								OwnerTag    string `json:"ownerTag"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+							} `json:"attributes"`
+							Children []struct {
+								VzProvDef struct {
+									Attributes struct {
+										AnyDn             string `json:"anyDn"`
+										BdDefDn           string `json:"bdDefDn"`
+										BdDefStQual       string `json:"bdDefStQual"`
+										ChildAction       string `json:"childAction"`
+										CtrctUpd          string `json:"ctrctUpd"`
+										CtxDefDn          string `json:"ctxDefDn"`
+										CtxDefStQual      string `json:"ctxDefStQual"`
+										CtxPcTag          string `json:"ctxPcTag"`
+										CtxSeg            string `json:"ctxSeg"`
+										Descr             string `json:"descr"`
+										EpgDn             string `json:"epgDn"`
+										HasTriggeredAlloc string `json:"hasTriggeredAlloc"`
+										IsAny             string `json:"isAny"`
+										L3CtxEncap        string `json:"l3CtxEncap"`
+										LcOwn             string `json:"lcOwn"`
+										MatchT            string `json:"matchT"`
+										ModTs             string `json:"modTs"`
+										MonPolDn          string `json:"monPolDn"`
+										Name              string `json:"name"`
+										NameAlias         string `json:"nameAlias"`
+										OwnerKey          string `json:"ownerKey"`
+										OwnerTag          string `json:"ownerTag"`
+										PcEnfPref         string `json:"pcEnfPref"`
+										PcTag             string `json:"pcTag"`
+										PrefGrMemb        string `json:"prefGrMemb"`
+										Prio              string `json:"prio"`
+										Rn                string `json:"rn"`
+										ScopeID           string `json:"scopeId"`
+										Status            string `json:"status"`
+										TargetDscp        string `json:"targetDscp"`
+										TxID              string `json:"txId"`
+										UseAnyDef         string `json:"useAnyDef"`
+									} `json:"attributes"`
+								} `json:"vzProvDef"`
+							} `json:"children"`
+						} `json:"vzDirAssDef"`
+						VzRtProv struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								TCl         string `json:"tCl"`
+								TDn         string `json:"tDn"`
+							} `json:"attributes"`
+						} `json:"vzRtProv"`
+						VzSubj struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ConfigIssues string `json:"configIssues"`
+								ConsMatchT   string `json:"consMatchT"`
+								Descr        string `json:"descr"`
+								ExtMngdBy    string `json:"extMngdBy"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								MonPolDn     string `json:"monPolDn"`
+								Name         string `json:"name"`
+								NameAlias    string `json:"nameAlias"`
+								Prio         string `json:"prio"`
+								ProvMatchT   string `json:"provMatchT"`
+								RevFltPorts  string `json:"revFltPorts"`
+								Rn           string `json:"rn"`
+								Status       string `json:"status"`
+								TargetDscp   string `json:"targetDscp"`
+								UID          string `json:"uid"`
+							} `json:"attributes"`
+							Children []struct {
+								VzRsSubjFiltAtt struct {
+									Attributes struct {
+										ChildAction    string `json:"childAction"`
+										Directives     string `json:"directives"`
+										ExtMngdBy      string `json:"extMngdBy"`
+										ForceResolve   string `json:"forceResolve"`
+										LcOwn          string `json:"lcOwn"`
+										ModTs          string `json:"modTs"`
+										MonPolDn       string `json:"monPolDn"`
+										RType          string `json:"rType"`
+										Rn             string `json:"rn"`
+										State          string `json:"state"`
+										StateQual      string `json:"stateQual"`
+										Status         string `json:"status"`
+										TCl            string `json:"tCl"`
+										TContextDn     string `json:"tContextDn"`
+										TDn            string `json:"tDn"`
+										TRn            string `json:"tRn"`
+										TType          string `json:"tType"`
+										TnVzFilterName string `json:"tnVzFilterName"`
+										UID            string `json:"uid"`
+									} `json:"attributes"`
+								} `json:"vzRsSubjFiltAtt"`
+							} `json:"children"`
+						} `json:"vzSubj"`
+					} `json:"children"`
+				} `json:"vzBrCP"`
+				VzFilter struct {
+					Attributes struct {
+						ChildAction string `json:"childAction"`
+						Descr       string `json:"descr"`
+						ExtMngdBy   string `json:"extMngdBy"`
+						FwdID       string `json:"fwdId"`
+						ID          string `json:"id"`
+						LcOwn       string `json:"lcOwn"`
+						ModTs       string `json:"modTs"`
+						MonPolDn    string `json:"monPolDn"`
+						Name        string `json:"name"`
+						NameAlias   string `json:"nameAlias"`
+						OwnerKey    string `json:"ownerKey"`
+						OwnerTag    string `json:"ownerTag"`
+						RevID       string `json:"revId"`
+						Rn          string `json:"rn"`
+						Status      string `json:"status"`
+						TxID        string `json:"txId"`
+						UID         string `json:"uid"`
+						UsesIds     string `json:"usesIds"`
+					} `json:"attributes"`
+					Children []struct {
+						VzEntry struct {
+							Attributes struct {
+								ApplyToFrag string `json:"applyToFrag"`
+								ArpOpc      string `json:"arpOpc"`
+								ChildAction string `json:"childAction"`
+								DFromPort   string `json:"dFromPort"`
+								DToPort     string `json:"dToPort"`
+								Descr       string `json:"descr"`
+								EtherT      string `json:"etherT"`
+								ExtMngdBy   string `json:"extMngdBy"`
+								Icmpv4T     string `json:"icmpv4T"`
+								Icmpv6T     string `json:"icmpv6T"`
+								LcOwn       string `json:"lcOwn"`
+								MatchDscp   string `json:"matchDscp"`
+								ModTs       string `json:"modTs"`
+								MonPolDn    string `json:"monPolDn"`
+								Name        string `json:"name"`
+								NameAlias   string `json:"nameAlias"`
+								Prot        string `json:"prot"`
+								Rn          string `json:"rn"`
+								SFromPort   string `json:"sFromPort"`
+								SToPort     string `json:"sToPort"`
+								Stateful    string `json:"stateful"`
+								Status      string `json:"status"`
+								TcpRules    string `json:"tcpRules"`
+								UID         string `json:"uid"`
+							} `json:"attributes"`
+						} `json:"vzEntry"`
+						VzRsFwdRFltPAtt struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ForceResolve string `json:"forceResolve"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								RType        string `json:"rType"`
+								Rn           string `json:"rn"`
+								State        string `json:"state"`
+								StateQual    string `json:"stateQual"`
+								Status       string `json:"status"`
+								TCl          string `json:"tCl"`
+								TDn          string `json:"tDn"`
+								TType        string `json:"tType"`
+							} `json:"attributes"`
+						} `json:"vzRsFwdRFltPAtt"`
+						VzRsRevRFltPAtt struct {
+							Attributes struct {
+								ChildAction  string `json:"childAction"`
+								ForceResolve string `json:"forceResolve"`
+								LcOwn        string `json:"lcOwn"`
+								ModTs        string `json:"modTs"`
+								RType        string `json:"rType"`
+								Rn           string `json:"rn"`
+								State        string `json:"state"`
+								StateQual    string `json:"stateQual"`
+								Status       string `json:"status"`
+								TCl          string `json:"tCl"`
+								TDn          string `json:"tDn"`
+								TType        string `json:"tType"`
+							} `json:"attributes"`
+						} `json:"vzRsRevRFltPAtt"`
+						VzRtSubjFiltAtt struct {
+							Attributes struct {
+								ChildAction string `json:"childAction"`
+								LcOwn       string `json:"lcOwn"`
+								ModTs       string `json:"modTs"`
+								Rn          string `json:"rn"`
+								Status      string `json:"status"`
+								TCl         string `json:"tCl"`
+								TDn         string `json:"tDn"`
+							} `json:"attributes"`
+						} `json:"vzRtSubjFiltAtt"`
+					} `json:"children"`
+				} `json:"vzFilter"`
+			} `json:"children"`
+		} `json:"fvTenant"`
+	} `json:"imdata"`
+	TotalCount string `json:"totalCount"`
+}
