@@ -4,6 +4,8 @@ stages:
 go_build:
     stage: build
     image: golang:1.11
+    tags:
+        - aci
     script:
         - go get ./...
         - go build
