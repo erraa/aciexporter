@@ -6,4 +6,4 @@ go_build:
     image: golang:1.11
     script:
         - go get ./...
-        - dep ensure
+        - go build
