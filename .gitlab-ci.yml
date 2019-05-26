@@ -12,7 +12,7 @@ variables:
 
 stages:
     - build
-
+    - docker_build
 
 go_build:
     <<: *prep_go
@@ -26,8 +26,6 @@ go_build:
 
 before_script:
     - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-
-
 
 docker_build:
     stage: docker_build
