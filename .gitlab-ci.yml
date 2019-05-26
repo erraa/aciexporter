@@ -30,7 +30,7 @@ before_script:
 docker_build:
     stage: docker_build
     tags:
-        docker
+        - docker
     script:
         - docker build -t $IMAGE_TAG .
         - docker push $IMAGE_TAG
