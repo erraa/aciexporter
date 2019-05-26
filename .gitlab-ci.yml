@@ -7,6 +7,9 @@
     - export GO_PROJECT_PATH="$GO_PROJECT_PATH/$CI_PROJECT_NAME"
     - cd $GO_PROJECT_PATH
 
+variables:
+    IMAGE_TAG: erra/aciexporter:$CI_COMMIT_TAG
+
 stages:
     - build
 
@@ -20,3 +23,16 @@ go_build:
     script:
         - go get ./...
         - go build
+
+before_script:
+    - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+
+
+
+docker_build:
+    stage: docker_build
+    tags:
+        docker
+    script:
+        - docker build -t $IMAGE_TAG .
+        - docker push $IMAGE_TAG

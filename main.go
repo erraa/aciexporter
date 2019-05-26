@@ -30,6 +30,6 @@ func main() {
 	fmt.Println(c.APIC.BaseURI)
 	fmt.Println(c.Log.Loglevel)
 	http.Handle("/metrics", promhttp.Handler())
-	log.Info("Beginning to serve on port :8080")
-	log.Fatal(http.ListenAndServe("127.0.0.1:8080", nil))
+	log.Info("Beginning to serve on port :8383")
+	log.Fatal(http.ListenAndServe("127.0.0.1:8383", nil))
 }
