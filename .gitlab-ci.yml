@@ -13,6 +13,7 @@ variables:
 stages:
     - build
     - docker_build
+    - deploy
 
 go_build:
     <<: *prep_go
@@ -34,3 +35,9 @@ docker_build:
     script:
         - docker build -t $IMAGE_TAG .
         - docker push $IMAGE_TAG
+deploy:
+    stage: deploy
+    tags:
+        - docker
+    script:
+        - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 erraa/aciexporter

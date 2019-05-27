@@ -28,6 +28,9 @@ func init() {
 	// These 2 imports are for testing only
 	viper.AddConfigPath(".")
 	viper.AddConfigPath("../")
+	viper.AddConfigPath("/home/prometheus/")
+	viper.AddConfigPath("/home/aciexporter/")
+	viper.AddConfigPath("/etc/")
 
 	// This is where you are suppose to have the config file in prod
 	viper.AddConfigPath("$HOME")
