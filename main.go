@@ -31,5 +31,5 @@ func main() {
 	fmt.Println(c.Log.Loglevel)
 	http.Handle("/metrics", promhttp.Handler())
 	log.Info("Beginning to serve on port :8383")
-	log.Fatal(http.ListenAndServe("127.0.0.1:8383", nil))
+	log.Fatal(http.ListenAndServe("0.0.0.0:8383", nil))
 }
