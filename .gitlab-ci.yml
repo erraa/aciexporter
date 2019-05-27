@@ -40,4 +40,6 @@ deploy:
     tags:
         - docker
     script:
+        - docker rm aciexporter
         - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
+        - docker network connect prom-net aciexporter
