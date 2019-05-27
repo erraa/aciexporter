@@ -40,4 +40,4 @@ deploy:
     tags:
         - docker
     script:
-        - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 erraa/aciexporter
+        - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
