@@ -12,6 +12,7 @@ variables:
 
 stages:
     - build
+    - test
     - docker_build
     - deploy
 
@@ -24,6 +25,14 @@ go_build:
     script:
         - go get ./...
         - go build
+
+go_test:
+  stage: test
+  image: golang:1.11
+  tags:
+    - aci
+  script:
+    - go test ./...
 
 before_script:
     - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
