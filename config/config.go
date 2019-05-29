@@ -36,7 +36,7 @@ func init() {
 	viper.AddConfigPath("$HOME")
 	err := viper.ReadInConfig()
 	if err != nil {
-		panic(fmt.Errorf("Could not read config ", err))
+		panic(fmt.Errorf("Could not read config %s", err))
 	}
 }
 
