@@ -35,6 +35,8 @@ docker_build:
     script:
         - docker build -t $IMAGE_TAG .
         - docker push $IMAGE_TAG
+    only:
+      - master
 deploy:
     stage: deploy
     tags:
@@ -43,3 +45,5 @@ deploy:
         - docker rm aciexporter --force
         - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
         - docker network connect prom-net aciexporter
+    only:
+      - master
