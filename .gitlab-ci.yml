@@ -27,11 +27,13 @@ go_build:
         - go build
 
 go_test:
+  <<: *prep_go
   stage: test
   image: golang:1.11
   tags:
     - aci
   script:
+    - go get ./...
     - go test ./...
 
 
