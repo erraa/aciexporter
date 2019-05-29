@@ -34,11 +34,11 @@ go_test:
   script:
     - go test ./...
 
-before_script:
-    - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
 
 docker_build:
     stage: docker_build
+    before_script:
+        - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     tags:
         - docker
     script:
@@ -48,6 +48,8 @@ docker_build:
       - master
 deploy:
     stage: deploy
+    before_script:
+        - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     tags:
         - docker
     script:
