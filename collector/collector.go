@@ -1,6 +1,7 @@
 package collector
 
 import (
+	"strconv"
 	"sync"
 
 	"github.com/erraa/aciexporter/aci"
@@ -14,12 +15,6 @@ var Log = acilogger.Log.WithFields(logrus.Fields{
 	"file":    "collector.go",
 })
 
-type AciCollector struct {
-	client  *aci.Client
-	metrics map[string]*prometheus.Desc
-	mutex   sync.Mutex
-}
-
 func NewAciCollector(aciClient *aci.Client, namespace string) *AciCollector {
 	return &AciCollector{
 		client: aciClient,
@@ -27,6 +22,12 @@ func NewAciCollector(aciClient *aci.Client, namespace string) *AciCollector {
 			"fvBD": newGlobalMetric(namespace, "total_bds", "Total amount of bds"),
 		},
 	}
+}
+
+type AciCollector struct {
+	client  *aci.Client
+	metrics map[string]*prometheus.Desc
+	mutex   sync.Mutex
 }
 
 func (c *AciCollector) Describe(ch chan<- *prometheus.Desc) {
@@ -44,8 +45,14 @@ func (c *AciCollector) Collect(ch chan<- prometheus.Metric) {
 		Log.Fatalf("Error getting stats %s", err)
 	}
 
+	count, err := strconv.Atoi(metrics["fvBD"]["count"])
+
+	if err != nil {
+		Log.Fatalf("Error %s", err)
+	}
+
 	ch <- prometheus.MustNewConstMetric(c.metrics["fvBD"],
-		prometheus.GaugeValue, float64(metrics["fvBD"]))
+		prometheus.GaugeValue, float64(count))
 }
 
 func newGlobalMetric(namespace string, metricName string, docString string) *prometheus.Desc {
