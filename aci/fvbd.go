@@ -227,6 +227,16 @@ func (bd *FvBD) GetImData() []IMDATA {
 	return bd.ImData
 }
 
+func (bd *FvBD) GetAttributes() (map[string]string, error) {
+	returnMap := map[string]string{}
+	attr, err := json.Marshal(bd.ImData[0].FvBD.Attributes)
+	if err != nil {
+		return nil, err
+	}
+	err = json.Unmarshal(attr, &returnMap)
+	return returnMap, nil
+}
+
 func (bd *FvBD) Class() string {
 	return "fvBD"
 }

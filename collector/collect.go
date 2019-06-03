@@ -14,7 +14,14 @@ func CollectMetrics(client *aci.Client) (map[string]map[string]string, error) {
 			Log.Fatalf("Error fetching object from APIC %s", err)
 			return nil, err
 		}
-		metrics[o.Class()]["count"] = o.GetTotalCount()
+		metrics[o.Class()] = map[string]string{"count": o.GetTotalCount()}
+		attributes, err := o.GetAttributes()
+		if err != nil {
+			return nil, err
+		}
+		for k, v := range attributes {
+			metrics[o.Class()][k] = v
+		}
 	}
 	return metrics, nil
 }
