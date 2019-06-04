@@ -56,7 +56,7 @@ deploy:
         - docker
     script:
         - docker rm aciexporter --force
-        - docker run --restart unless-stopped -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
+        - docker run --restart unless-stopped -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter:latest
         - docker network connect prom-net aciexporter
     only:
       - master
