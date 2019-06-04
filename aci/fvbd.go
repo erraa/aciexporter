@@ -2,8 +2,6 @@ package aci
 
 import (
 	"encoding/json"
-	"fmt"
-	"io/ioutil"
 
 	"github.com/erraa/aciexporter/acilogger"
 	"github.com/sirupsen/logrus"
@@ -14,33 +12,6 @@ var Log = acilogger.Log.WithFields(logrus.Fields{
 	"file":    "fvbd.go",
 })
 
-func GetBD(client *Client) (FvBD, error) {
-	Log.Debug("Running GetBD")
-	resp, err := client.get(fmt.Sprintf(
-		"%s%s%s",
-		"/api/class/",
-		"fvBD",
-		".json",
-	))
-	if err != nil {
-		return FvBD{}, err
-	}
-
-	body, err := ioutil.ReadAll(resp.Body)
-	defer resp.Body.Close()
-
-	if err != nil {
-		return FvBD{}, err
-	}
-	fvBD := FvBD{}
-	err = fvBD.UnmarshalJson(body)
-	if err != nil {
-		return FvBD{}, err
-	}
-	Log.Debug(fmt.Sprintf("Fetch objects %s", fvBD))
-	return fvBD, nil
-}
-
 type FvBD struct {
 	ImData     []IMDATA `json:"imdata"`
 	TotalCount string   `json:"totalCount"`
@@ -48,7 +19,8 @@ type FvBD struct {
 }
 
 type IMDATA struct {
-	FvBD FVBD `json:"fvBD"`
+	FvBD   FVBD   `json:"fvBD"`
+	FvAEPg FVAEPG `json:"fvAEPg"`
 }
 
 type FVBD struct {
