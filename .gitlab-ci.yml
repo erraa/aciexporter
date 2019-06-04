@@ -1,7 +1,7 @@
 .prep_go: &prep_go
   before_script:
     - export GL_URL=$(echo $CI_PROJECT_URL | awk -F/ '{print $3}')
-    - export GO_PROJECT_PATH="$GOPATH/src/$GL_URL/$CI_PROJECT_NAMESPACE"
+    - export GO_PROJECT_PATH="$GOPATH/src/github.com/erraa/"
     - mkdir -p $GO_PROJECT_PATH
     - ln -s $(pwd) $GO_PROJECT_PATH
     - export GO_PROJECT_PATH="$GO_PROJECT_PATH/$CI_PROJECT_NAME"
@@ -12,6 +12,7 @@ variables:
 
 stages:
     - build
+    - test
     - docker_build
     - deploy
 
@@ -25,11 +26,21 @@ go_build:
         - go get ./...
         - go build
 
-before_script:
-    - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
+go_test:
+  <<: *prep_go
+  stage: test
+  image: golang:1.11
+  tags:
+    - aci
+  script:
+    - go get ./...
+    - go test ./...
+
 
 docker_build:
     stage: docker_build
+    before_script:
+        - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     tags:
         - docker
     script:
@@ -39,11 +50,13 @@ docker_build:
       - master
 deploy:
     stage: deploy
+    before_script:
+        - docker login -u $CI_REGISTRY_USER -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
     tags:
         - docker
     script:
         - docker rm aciexporter --force
-        - docker run -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
+        - docker run --restart unless-stopped -d -v /home/prometheus/aciexporter.yaml:/root/aciexporter.yaml -p 8383:8383 --name aciexporter erraa/aciexporter
         - docker network connect prom-net aciexporter
     only:
       - master

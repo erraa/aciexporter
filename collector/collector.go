@@ -1,6 +1,8 @@
 package collector
 
 import (
+	"fmt"
+	"strconv"
 	"sync"
 
 	"github.com/erraa/aciexporter/aci"
@@ -14,19 +16,23 @@ var Log = acilogger.Log.WithFields(logrus.Fields{
 	"file":    "collector.go",
 })
 
+func NewAciCollector(aciClient *aci.Client, namespace string) *AciCollector {
+	metrics := map[string]*prometheus.Desc{}
+	for _, obj := range aciObjects {
+		name := fmt.Sprintf("total_%s", obj.Class())
+		metrics[obj.Class()] = newGlobalMetric(namespace, name, fmt.Sprintf("Total amount of %s", name))
+	}
+	acicollector := &AciCollector{
+		client:  aciClient,
+		metrics: metrics,
+	}
+	return acicollector
+}
+
 type AciCollector struct {
 	client  *aci.Client
 	metrics map[string]*prometheus.Desc
 	mutex   sync.Mutex
-}
-
-func NewAciCollector(aciClient *aci.Client, namespace string) *AciCollector {
-	return &AciCollector{
-		client: aciClient,
-		metrics: map[string]*prometheus.Desc{
-			"fvBD": newGlobalMetric(namespace, "total_bds", "Total amount of bds"),
-		},
-	}
 }
 
 func (c *AciCollector) Describe(ch chan<- *prometheus.Desc) {
@@ -44,8 +50,15 @@ func (c *AciCollector) Collect(ch chan<- prometheus.Metric) {
 		Log.Fatalf("Error getting stats %s", err)
 	}
 
-	ch <- prometheus.MustNewConstMetric(c.metrics["fvBD"],
-		prometheus.GaugeValue, float64(metrics["fvBD"]))
+	for k, v := range metrics {
+		count, err := strconv.Atoi(v["count"])
+		if err != nil {
+			Log.Fatalf("Error %s", err)
+		}
+		ch <- prometheus.MustNewConstMetric(c.metrics[k],
+			prometheus.GaugeValue, float64(count))
+	}
+
 }
 
 func newGlobalMetric(namespace string, metricName string, docString string) *prometheus.Desc {

@@ -1,23 +1,27 @@
 package collector
 
 import (
-	"strconv"
-
 	"github.com/erraa/aciexporter/aci"
 )
 
-var aciObjects = []aci.AciObject{&aci.FvBD{}}
+var aciObjects = []aci.AciObject{&aci.FvBD{}, &aci.FvAEPg{}}
 
-func CollectMetrics(client *aci.Client) (map[string]int, error) {
-	metrics := make(map[string]int)
+func CollectMetrics(client *aci.Client) (map[string]map[string]string, error) {
+	metrics := make(map[string]map[string]string)
 	for _, aciObject := range aciObjects {
 		o, err := aci.Get(aciObject, client)
 		if err != nil {
 			Log.Fatalf("Error fetching object from APIC %s", err)
 			return nil, err
 		}
-		metrics[o.Class()], err = strconv.Atoi(o.GetTotalCount())
+		metrics[o.Class()] = map[string]string{"count": o.GetTotalCount()}
+		attributes, err := o.GetAttributes()
+		if err != nil {
+			return nil, err
+		}
+		for k, v := range attributes {
+			metrics[o.Class()][k] = v
+		}
 	}
-
 	return metrics, nil
 }
