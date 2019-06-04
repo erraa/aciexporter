@@ -2,7 +2,7 @@
 FROM golang:1.11 as builder
 
 # Set the Current Working Directory inside the container
-WORKDIR /go/src/git.hackernet.se/erra/aciexporter/
+WORKDIR /go/src/github.com/erraa/aciexporter/
 
 # Copy everything from the current directory to the PWD(Present Working Directory) inside the container
 COPY . .
