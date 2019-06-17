@@ -7,8 +7,8 @@ import (
 
 type AciObject interface {
 	GetTotalCount() string
-	GetImData() []IMDATA
-	GetAttributes() (map[string]string, error)
+	GetAll() ([]map[string]string, error)
+	//GetAttributes() (map[string]string, error)
 	UnmarshalJson([]byte) error
 	Class() string
 }
