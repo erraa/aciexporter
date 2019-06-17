@@ -2,7 +2,6 @@ package collector
 
 import (
 	"fmt"
-	"strconv"
 	"sync"
 
 	"github.com/erraa/aciexporter/aci"
@@ -19,8 +18,15 @@ var Log = acilogger.Log.WithFields(logrus.Fields{
 func NewAciCollector(aciClient *aci.Client, namespace string) *AciCollector {
 	metrics := map[string]*prometheus.Desc{}
 	for _, obj := range aciObjects {
+		aci.Get(obj, aciClient)
+		attributes, _ := obj.GetAll()
 		name := fmt.Sprintf("total_%s", obj.Class())
-		metrics[obj.Class()] = newGlobalMetric(namespace, name, fmt.Sprintf("Total amount of %s", name))
+		obj.GetAll()
+		labels := []string{}
+		for k := range attributes[0] {
+			labels = append(labels, k)
+		}
+		metrics[obj.Class()] = newGlobalMetric(namespace, name, fmt.Sprintf("Total amount of %s", name), labels)
 	}
 	acicollector := &AciCollector{
 		client:  aciClient,
@@ -51,16 +57,22 @@ func (c *AciCollector) Collect(ch chan<- prometheus.Metric) {
 	}
 
 	for k, v := range metrics {
-		count, err := strconv.Atoi(v["count"])
+		var count int = 1
 		if err != nil {
 			Log.Fatalf("Error %s", err)
 		}
-		ch <- prometheus.MustNewConstMetric(c.metrics[k],
-			prometheus.GaugeValue, float64(count))
+		for _, obj := range v {
+			labelValues := []string{}
+			for _, labelValue := range obj {
+				labelValues = append(labelValues, labelValue)
+			}
+			ch <- prometheus.MustNewConstMetric(c.metrics[k],
+				prometheus.GaugeValue, float64(count), labelValues...)
+		}
 	}
 
 }
 
-func newGlobalMetric(namespace string, metricName string, docString string) *prometheus.Desc {
-	return prometheus.NewDesc(namespace+"_"+metricName, docString, nil, nil)
+func newGlobalMetric(namespace string, metricName string, docString string, labels []string) *prometheus.Desc {
+	return prometheus.NewDesc(namespace+"_"+metricName, docString, labels, nil)
 }

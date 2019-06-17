@@ -12,6 +12,20 @@ var Log = acilogger.Log.WithFields(logrus.Fields{
 	"file":    "fvbd.go",
 })
 
+func (bd *FvBD) GetAll() ([]map[string]string, error) {
+	returnSlice := []map[string]string{}
+	for _, obj := range bd.ImData {
+		jsonAttr := map[string]string{}
+		attr, _ := json.Marshal(obj.FvBD.Attributes)
+		err := json.Unmarshal(attr, &jsonAttr)
+		if err != nil {
+			return nil, err
+		}
+		returnSlice = append(returnSlice, jsonAttr)
+	}
+	return returnSlice, nil
+}
+
 type FvBD struct {
 	ImData     []IMDATA `json:"imdata"`
 	TotalCount string   `json:"totalCount"`

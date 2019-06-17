@@ -34,6 +34,20 @@ func (epg *FvAEPg) GetImData() []IMDATA {
 	return epg.ImData
 }
 
+func (epg *FvAEPg) GetAll() ([]map[string]string, error) {
+	returnSlice := []map[string]string{}
+	for _, obj := range epg.ImData {
+		jsonAttr := map[string]string{}
+		attr, _ := json.Marshal(obj.FvAEPg.Attributes)
+		err := json.Unmarshal(attr, &jsonAttr)
+		if err != nil {
+			return nil, err
+		}
+		returnSlice = append(returnSlice, jsonAttr)
+	}
+	return returnSlice, nil
+}
+
 func (epg *FvAEPg) GetAttributes() (map[string]string, error) {
 	returnMap := map[string]string{}
 	attr, err := json.Marshal(epg.ImData[0].FvAEPg.Attributes)
