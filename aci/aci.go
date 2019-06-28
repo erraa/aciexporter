@@ -6,11 +6,15 @@ import (
 )
 
 type AciObject interface {
-	GetTotalCount() string
 	GetAll() ([]map[string]string, error)
-	//GetAttributes() (map[string]string, error)
 	UnmarshalJson([]byte) error
 	Class() string
+}
+
+type IMDATA struct {
+	FvBD      FVBD      `json:"fvBD"`
+	FvAEPg    FVAEPG    `json:"fvAEPg"`
+	FaultInst FAULTINST `json:"faultInst"`
 }
 
 func Get(o AciObject, client *Client) (AciObject, error) {

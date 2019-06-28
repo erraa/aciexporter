@@ -4,7 +4,7 @@ import (
 	"github.com/erraa/aciexporter/aci"
 )
 
-var aciObjects = []aci.AciObject{&aci.FvAEPg{}, &aci.FvBD{}}
+var aciObjects = []aci.AciObject{&aci.FvAEPg{}, &aci.FvBD{}, &aci.FaultInst{}}
 
 func CollectMetrics(client *aci.Client) (map[string][]map[string]string, error) {
 	metrics := make(map[string][]map[string]string)
