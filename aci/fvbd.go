@@ -32,11 +32,6 @@ type FvBD struct {
 	FvBD       FVBD     `json:"fvBD"`
 }
 
-type IMDATA struct {
-	FvBD   FVBD   `json:"fvBD"`
-	FvAEPg FVAEPG `json:"fvAEPg"`
-}
-
 type FVBD struct {
 	Attributes struct {
 		OptimizeWanBandwidth     string `json:"OptimizeWanBandwidth"`

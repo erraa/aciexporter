@@ -48,11 +48,11 @@ func (c *Client) Login(username, password string) error {
 	}
 
 	resp, err := c.post(apiUrl, data)
-	defer resp.Body.Close()
-
 	if err != nil {
 		return err
 	}
+	defer resp.Body.Close()
+
 	cookieJar, _ := cookiejar.New(nil)
 	for _, cookie := range resp.Cookies() {
 		if cookie.Name == "APIC-cookie" {

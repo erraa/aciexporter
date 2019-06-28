@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/erraa/aciexporter/aci"
 	"github.com/erraa/aciexporter/collector"
@@ -21,7 +22,8 @@ func init() {
 		c.APIC.Password,
 	)
 	if err != nil {
-		panic(err)
+		log.Error("Unable to connect to APIC")
+		os.Exit(2)
 	}
 	prometheus.MustRegister(collector.NewAciCollector(client, "aci"))
 }
