@@ -67,5 +67,6 @@ cleanup:
       - docker
   script:
       - docker rmi $(docker images -f “dangling=true” -q)
+  when: always
   only:
     - master
